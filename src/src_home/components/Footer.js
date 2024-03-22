@@ -16,7 +16,7 @@ const Footer = () => {
                         <div className="box-border border-b-4 border-blue-900 p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
                             <h3 className="font-bold text-4xl mb-4">MLD</h3>
                             <div className='text-md font-medium text-gray-600'>
-                                <h5>Molad e Konsult</h5>
+                                <h5>Hello | By Blackholes</h5>
                                 <p>Ilo Awela,</p>
                                 <p>Ota,</p>
                                 <p>Ogun State.</p>
@@ -98,7 +98,7 @@ const Footer = () => {
                         to="#"
                         className=" hover:text-gray-900"
                     >
-                        Molad e Konsult
+                        Blackholes
                     </HashLink>. All rights reserved.
                     </div>
                 </div>

@@ -22,10 +22,35 @@ class Sreach extends Component {
       disableTour
     } = this.props;
 
+    const fileUploadLabelStyle = {
+      cursor: 'pointer',
+      display: 'inline-block',
+      padding: '10px 15px',
+      border: '2px solid #ddd',
+      borderRadius: '5px', // Making it square
+      color: '#555',
+      transition: 'background-color 0.3s ease',
+      ':hover': {
+        backgroundColor: '#f0f0f0'
+      },
+      'i': {
+        marginRight: '5px'
+      },
+      width: '95%', // Set width to match height
+      height: '100px', // Set height
+      textAlign: 'center',
+      lineHeight: '100px' // Center content vertically
+    };
+    
+
+    const fileUploadInputStyle = {
+      display: 'none'
+    };
+
     return (
       <React.Fragment>
         <header className="sc-slide-header">
-          <h5>Filters</h5>
+          <h5>Comparision</h5>
 
           <i
             className="sc-icon-menu sc-slide-toggle"
@@ -37,6 +62,34 @@ class Sreach extends Component {
 
         <div className="sc-slide-body">
           <form className="sc-form">
+          
+
+<div style={{ marginBottom: '20px' }}> {/* Applying inline style */}
+          <h6>Select Southwest property</h6>
+          <label htmlFor="file-upload" style={fileUploadLabelStyle}>
+            <i className="fas fa-cloud-upload-alt"></i>
+            Choose a file2
+          </label>
+          
+          {/* <input id="file-upload" type="file" style={fileUploadInputStyle} /> */}
+        </div>
+
+        <div style={{ marginBottom: '20px' }}> {/* Applying inline style */}
+          <h6>Select any other propety</h6>
+          <label htmlFor="file-upload" style={fileUploadLabelStyle}>
+            <i className="fas fa-cloud-upload-alt"></i>
+            Choose a file2
+          </label>
+        
+          {/* <input id="file-upload" type="file" style={fileUploadInputStyle} /> */}
+        </div>
+
+        <header className="sc-slide-header">
+          <h5>Filters</h5>
+
+         
+        </header>
+
             <h6>Type</h6>
 
             <div className="sc-form-group sc-grid-2">

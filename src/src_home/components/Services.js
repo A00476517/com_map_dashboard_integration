@@ -3,42 +3,12 @@ import img from '../images/web.svg';
 import img2 from '../images/app.svg';
 import img3 from '../images/hosting.svg';
 import img4 from '../images/consultation.svg';
-import { GoogleLogin } from '@react-oauth/google';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 const Services = () => {
     const [ user, setUser ] = useState([]);
     const [ profile, setProfile ] = useState([]);
-    const login = useGoogleLogin({
-        onSuccess: (codeResponse) => setUser(codeResponse),
-        onError: (error) => console.log('Login Failed:', error)
-    });
 
-    useEffect(
-        () => {
-            if (user) {
-                axios
-                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-                        headers: {
-                            Authorization: `Bearer ${user.access_token}`,
-                            Accept: 'application/json'
-                        }
-                    })
-                    .then((res) => {
-                        setProfile(res.data);
-                    })
-                    .catch((err) => console.log(err));
-            }
-        },
-        [ user ]
-    );
-
-
-    const logOut = () => {
-        googleLogout();
-        setProfile(null);
-    };
     // const responseMessage = (response) => {
     //     console.log("SSSSSSSSSSSSSSSSSSSSSSSS")
     //     console.log(JSON.stringify(response));
@@ -61,32 +31,19 @@ const Services = () => {
                         </div>
                         <h2 className="mt-4 mx-12 text-center text-xl lg:text-2xl font-semibold text-blue-900">
                         {/* <GoogleLogin onSuccess={responseMessage} onError={errorMessage} /> */}
-                        {profile ? (
-                <div>
-                    <img src={profile.picture} alt="user image" />
-                    <h3>User Logged in</h3>
-                    <p>Name: {profile.name}</p>
-                    <p>Email Address: {profile.email}</p>
-                    <br />
-                    <br />
-                    <button onClick={logOut}>Log out</button>
-                </div>
-            ) : (
-                <button onClick={() => login()}>Sign in with Google 🚀 </button>
-            )}
 
                             We are deeply committed to the growth and success of our clients.</h2>
 
                     </div>
 
                     <div className="px-12" data-aos="fade-down" data-aos-delay="600">
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                             
                             <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="m-2 text-justify text-sm">
                                 <img alt="card img" className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out" src={img} />
                                     <h2 className="font-semibold my-4 text-2xl text-center">
-                                        <Link to="/Detail">Web Development</Link>
+                                        <Link to="/Login">Scraping</Link>
                                     </h2>
                                     <p className="text-md font-medium">
                                         We specialize in creating and optimizing high-quality, custom websites for businesses and organizations of all sizes. Building mobile-friendly and easy-to-use websites and applications for clients.
@@ -97,7 +54,9 @@ const Services = () => {
                             <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="m-2 text-justify text-sm">
                                 <img alt="card img" className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out" src={img2} />
-                                    <h2 className="font-semibold my-4 text-2xl text-center">Mobile App Development</h2>
+                                    <h2 className="font-semibold my-4 text-2xl text-center">
+                                    <Link to="/Login">Solution By Blackholes</Link>
+                                    </h2>
                                     <p className="text-md font-medium">
                                         We develop high-quality, custom cross-platform mobile applications that are robust and optimized for performance, scalability, and accessibility.
                                     </p>
@@ -107,22 +66,13 @@ const Services = () => {
                             <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
                                 <div className="m-2 text-justify text-sm">
                                     <img alt="card img" className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out" src={img3} />
-                                    <h2 className="font-semibold my-4 text-2xl text-center ">Domain and Hosting Services</h2>
+                                    <h2 className="font-semibold my-4 text-2xl text-center ">Dashboard</h2>
                                     <p className="text-md font-medium">
                                         We provide domain registration and web hosting services to individuals and organizations to enable them gain visibility in the digital space.
                                     </p>
                                 </div>
                             </div>
-
-                            <div className="bg-white transition-all ease-in-out duration-400  overflow-hidden text-gray-700 hover:bg-gray-500 hover:text-white rounded-lg shadow-2xl p-3 group">
-                                <div className="m-2 text-justify text-sm">
-                                <img alt="card img" className="rounded-t group-hover:scale-[1.15] transition duration-1000 ease-in-out" src={img4} />
-                                    <h2 className="font-semibold my-4 text-2xl text-center ">General IT Consultations</h2>
-                                    <p className="text-md font-medium">
-                                        Our IT consultations service provides expert guidance and support for businesses and individuals looking to optimize their technology solutions.
-                                    </p>
-                                </div>
-                            </div>                    
+                    
                         </div>
                     </div>
             </section>

@@ -4,7 +4,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 // import App from './App'
 import App from './src_map/components/app'
-// import App from './src_home/App'
+import App_home from './src_home/App_home'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -16,13 +16,16 @@ import './css/input-range.css'
 import './css/hacks.css'
 import './css/mapbox-hacks.css'
 import { GoogleOAuthProvider } from "@react-oauth/google"
-
+import { BrowserRouter } from 'react-router-dom'
 createRoot(document.getElementById('root')).render(
-  <GoogleOAuthProvider clientId='835958615002-sv7nh5gls60un3085qtm8374qfjrdf22.apps.googleusercontent.com'>
   <Provider store={store}>
-    <App />
+    
+    <BrowserRouter>
+     <App_home/>
+    </BrowserRouter>
+   
   </Provider>,
-  </GoogleOAuthProvider>
+  // </GoogleOAuthProvider>
 )
 
 // If you want to start measuring performance in your app, pass a function
