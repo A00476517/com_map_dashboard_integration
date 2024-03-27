@@ -39,7 +39,10 @@ class App extends Component {
     tourActive: false,
     tourIndex: 0,
     pageVisible: false,
-    page: {}
+    page: {},
+    firstPropertySelected: false,
+    secondPropertySelected: false,
+
   };
 
   componentDidMount() {
@@ -71,6 +74,8 @@ class App extends Component {
             onChangeTour={this.handleChangeTour}
             getPlacesCount={this.getPlacesCount}
             disableTour={numberOFPlaces === 0}
+            firstPropertySelected={this.state.firstPropertySelected}
+            secondPropertySelected={this.state.secondPropertySelected}
           />
         </div>
 
@@ -375,7 +380,7 @@ class App extends Component {
         dorm: "./assets/images/icon-dorm.png"
       },
       geoJsons: {
-        places: "./data/places.json"
+        places: "./data/places2.json"
       }
     });
 
@@ -403,6 +408,14 @@ class App extends Component {
     });
   };
 
+  handleFirstProperty2 = () => {
+    this.setState({ firstPropertySelected: !this.state.firstPropertySelected });
+  }
+
+  handleSecondProperty2 = () => {
+    this.setState({ secondPropertySelected: !this.state.secondPropertySelected });
+  }
+
   openPopup = (properties, lnglat) => {
     if (typeof properties.images !== "object")
       properties.images = JSON.parse(properties.images);
@@ -414,7 +427,7 @@ class App extends Component {
     let {
       title,
       images,
-      excert,
+      excerpt,
       typeName,
       rooms,
       area,
@@ -426,7 +439,11 @@ class App extends Component {
       <div class="sc-card-header">
         <h5 class="app-page-trigger">Compare with ${title} / ( graph )</h5>
       </div>
-      <h5 class="app-page-trigger">${title}</h5>
+      <h5 class="app-page-trigger">${title}</h5> 
+      <button class="first-property-button" style="${this.state.secondPropertySelected ? 'background-color: red;' : 'background-color: #4caf50;'} border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 8px;">Select First Property</button>
+ 
+      <button class="second-property-button" style="background-color: #4caf50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 8px;">Select Second Property</button>
+
 
       <div class="sc-card-body">
         <div>
@@ -464,46 +481,7 @@ class App extends Component {
           </table>
         </div>
       </div>
-      <h5 class="app-page-trigger">South West</h5>
-
-      <div class="sc-card-body">
-        <div>
-          <img src="${images[0].thumbnail}" class="app-page-trigger" />
-        </div>
-
-        <div>
-          <table class="sc-table">
-            <tbody>
-              <tr>
-                <td>Type</td>
-                <td>${typeName}</td>
-              </tr>
-
-              <tr>
-                <td>Rooms</td>
-                <td>${rooms}</td>
-              </tr>
-
-              <tr>
-                <td>Area</td>
-                <td>${area}</td>
-              </tr>
-
-              <tr>
-                <td>Rent</td>
-                <td>${rent}</td>
-              </tr>
-
-              <tr>
-                <td>Deposit</td>
-                <td>${deposit}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="sc-card-footer">${excert}</div>
+      <div class="sc-card-footer">${excerpt}</div>
     </div>`;
 
     this.mapcraft.openPopup({
@@ -518,6 +496,14 @@ class App extends Component {
         this.setState({ page: properties });
       });
     });
+
+    document.querySelector('.first-property-button').addEventListener('click', () => {
+      this.handleFirstProperty2();
+    });
+
+    document.querySelector('.second-property-button').addEventListener('click', () => {
+      this.handleSecondProperty2();
+  });
   };
 }
 

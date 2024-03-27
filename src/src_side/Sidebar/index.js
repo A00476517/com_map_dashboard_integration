@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //All the svg files
 import logo from "../assets/logo.svg";
@@ -6,10 +6,13 @@ import Home from "../assets/home-solid.svg";
 import Team from "../assets/social.svg";
 import Calender from "../assets/sceduled.svg";
 import Projects from "../assets/starred.svg";
+import Map from "../assets/map.png"
 import Documents from "../assets/draft.svg";
 import PowerOff from "../assets/power-off-solid.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   position: fixed;
@@ -224,6 +227,33 @@ const Sidebar = () => {
 
   const [profileClick, setprofileClick] = useState(false);
   const handleProfileClick = () => setprofileClick(!profileClick);
+  const navigate = useNavigate();
+
+  const [userProfile, setUserProfile] = useState(null);
+  const [name, setname] = useState(null)
+
+  const storedUserProfile = localStorage.getItem('userProfile');
+
+  const logOut = () => {
+    console.log("sssssssssssss")
+    googleLogout();
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('userProfile');
+    navigate("/login"); // Navigate to the login route
+
+};
+
+  // If userProfile exists in localStorage, parse it and set the state
+  useEffect(() => {
+    const storedUserProfile = localStorage.getItem('userProfile');
+    if (storedUserProfile) {
+      const parsedUserProfile = JSON.parse(storedUserProfile);
+      console.log("--------------0")
+      console.log(JSON.stringify(parsedUserProfile))
+      setUserProfile(parsedUserProfile);
+      setname(parsedUserProfile.given_name); // Set the 'name' state
+    }
+  }, []);
 
   return (
     <Container>
@@ -247,7 +277,7 @@ const Sidebar = () => {
           <Item
             onClick={() => setClick(false)}
             activeClassName="active"
-            to="/team"
+            to="/competitors"
           >
             <img src={Team} alt="Team" />
             <Text clicked={click}>Competitors</Text>
@@ -258,7 +288,7 @@ const Sidebar = () => {
             to="/calender"
             target="_blank"
           >
-            <img src={Calender} alt="Calender" />
+            <img src={Map} alt="Calender" />
             <Text clicked={click}>Map</Text>
           </Item>
           <Item
@@ -267,7 +297,7 @@ const Sidebar = () => {
             to="/documents"
           >
             <img src={Documents} alt="Documents" />
-            <Text clicked={click}>Documents</Text>
+            <Text clicked={click}>Under Developement</Text>
           </Item>
           <Item
             onClick={() => setClick(false)}
@@ -275,7 +305,7 @@ const Sidebar = () => {
             to="/projects"
           >
             <img src={Projects} alt="Projects" />
-            <Text clicked={click}>Projects</Text>
+            <Text clicked={click}>All Listings</Text>
           </Item>
         </SlickBar>
 
@@ -287,12 +317,17 @@ const Sidebar = () => {
           />
           <Details clicked={profileClick}>
             <Name>
-              <h4>Jhon&nbsp;Doe</h4>
+            
+                              <h4>{name}</h4>
+           
+
               <a href="/#">view&nbsp;profile</a>
             </Name>
 
             <Logout>
-              <img src={PowerOff} alt="logout" />
+              <img src={PowerOff} alt="logout" onClick={() => {
+                logOut()
+              }} />
             </Logout>
           </Details>
         </Profile>

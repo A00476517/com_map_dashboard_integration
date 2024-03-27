@@ -28,6 +28,8 @@ import styled from "styled-components"
 import Sidebar from 'src/src_side/Sidebar'
 import { GoogleOAuthProvider } from "@react-oauth/google"
 import App from 'src/src_map/components/app'
+import PropetyDetailPage from 'src/src_side/Pages/PropetyDetailPage';
+import PropertyList from 'src/src_side/Pages/PropertyList';
 function App_home() {
 
 
@@ -92,9 +94,9 @@ function App_home() {
     return(
       <>
       <Sidebar/>
-      <Pages>
+      <PagesForCopititorPage>
       <Documents/>
-      </Pages>
+      </PagesForCopititorPage>
       </>
     )
   }
@@ -103,12 +105,37 @@ function App_home() {
     return(
       <>
       <Sidebar/>
-      <Pages>
+      <PagesForCopititorPage>
       <Projects/>
-      </Pages>
+      </PagesForCopititorPage>
       </>
     )
   }
+
+  
+  function loadPropertyDetailElement(){
+    return(
+      <>
+      <Sidebar/>
+      <PagesForCopititorPage>
+      <PropetyDetailPage/>
+      </PagesForCopititorPage>
+      </>
+    )
+  }
+
+  function loadPropertyListElement(){
+    return(
+      <>
+      <Sidebar/>
+      <PagesForCopititorPage>
+      <PropertyList/>
+      </PagesForCopititorPage>
+      </>
+    )
+  }
+
+
 
 
   const Pages = styled.div`
@@ -154,10 +181,12 @@ const PagesForCopititorPage = styled.div`
             <Route path="/Login/*" element={<LoginWithOAuth/>} />
             <Route path="/HomePage" element={<HomePage/>} />
             <Route path="/home" element={loadHomeElement()} />            
-            <Route path="/team" element={loadTeamElement()} />            
+            <Route path="/competitors" element={loadTeamElement()} />            
             <Route path="/calender" element={loadCalenderElement()} />
             <Route path="/documents" element={loadDocumentsElement()} />
             <Route path="/projects" element={loadProjectsElement()} />
+            <Route path="/property/:propertName" element={loadPropertyDetailElement()} />
+            <Route path="/propertyList/:propertyName" element={loadPropertyListElement()}/>
           </Routes>
           {/* </GoogleOAuthProvider> */}
         </ScrollToTop>

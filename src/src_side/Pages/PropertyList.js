@@ -2,7 +2,8 @@ import MotionHoc from "./MotionHoc";
 import React, { useState, useEffect } from 'react';
 import PropetyDetailPage from "./PropetyDetailPage";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import Typewriter from "../componant/Typewriter";
+import { useParams } from 'react-router-dom';
+
 const PropertyData = [
   {
     "property_management_name": "FACADE investments - NAhas",
@@ -55,7 +56,7 @@ const PropertyData = [
   }
 ];
 
-const PropertyList = () => {
+const PropertyListView = () => {
   // useEffect(() => {
   //   document.body.style.overflowX = "hidden"; // Disable vertical scrolling
   //   return () => {
@@ -64,9 +65,10 @@ const PropertyList = () => {
   // }, []);
 
   const [propertyData2, setPropertyData2] = useState(PropertyData);
-
+  const { propertyName } = useParams();
+// alert(propertyName)
   useEffect(() => {
-    fetch('http://54.196.154.157:8070/competitors/competetor-details')
+    fetch(`http://54.196.154.157:8070/competitors/property-managed-listing?property_management_name=${propertyName}`)
       .then(response => response.json())
       .then(data => setPropertyData2(data))
       .catch(error => console.error('Error fetching data:', error));
@@ -74,27 +76,24 @@ const PropertyList = () => {
 
   return (
     <div style={styles.container}>
-      <div style={styles.cardsContainer}>
-        {propertyData2.map((property, index) => (
-          
+    <div style={styles.cardsContainer}>
+      {propertyData2.map((property, index) => (
           <div key={index} style={styles.propertyCard}>
             <div style={styles.imageContainer}>
-              <img src={`https://via.placeholder.com/150`} alt="Property" style={styles.propertyImage} />
+              <img src={property.image} alt="Property" style={styles.propertyImage} />
             </div>
             <div style={styles.propertyInfo}>
-            <Link key={index} to={`/propertyList/${property.property_management_name}`}>
-              <h2>{property.property_management_name}</h2>
-              <Typewriter text="My React App My React App My React App My React App My React App My React App" delay={100} />
-              <p>Total Listings: {property.total_listings}</p>
-              <p>1 Bedroom Avg. Price: {property.average_price_1_bedroom !== -1 ? '$' + property.average_price_1_bedroom.toFixed(2) : 'N/A'}</p>
-              <p>2 Bedroom Avg. Price: {property.average_price_2_bedroom !== -1 ? '$' + property.average_price_2_bedroom.toFixed(2) : 'N/A'}</p>
-             </Link>
+              <h2>{property.listing_name}</h2>
+              <p>Address: {property.address}</p>
+              <p>Bedrooms: {property.bedroom_count}</p>
+              <p>Bathrooms: {property.bathroom_count}</p>
+              <p>Monthly Rent: {property.monthly_rent !== -1 ? `$${property.monthly_rent}` : 'N/A'}</p>
+              {/* Add more details as needed */}
             </div>
           </div>
-       
-        ))}
-      </div>
+      ))}
     </div>
+  </div>
   );
 };
 
@@ -103,19 +102,21 @@ const PropertyList = () => {
 //   return <PropertyList />;
 // };
 
-const Team = () => {
+const PropertyList = () => {
   return (
     <div>
       <Header />
-      <PropertyList />
+      <PropertyListView />
     </div>
   );
 };
 
 const Header = () => {
+  const { propertyName } = useParams();
+
   return (
     <div style={styles.header}>
-      <h1 style={{ margin: 0, fontSize: '15px',  textAlign: 'center' }}>Competitors List</h1>
+      <h1 style={{ margin: 0, fontSize: '15px',  textAlign: 'center' }}>Property List of {propertyName}</h1>
     </div>
   );
 };
@@ -171,4 +172,4 @@ const styles = {
     flex: 1, // Allow the property info to take up remaining space
   },
 };
-export default Team;
+export default PropertyList;

@@ -2,7 +2,19 @@ import React, { Component } from "react";
 import InputRange from "react-input-range";
 
 class Sreach extends Component {
-  state = {};
+  state = {
+    firstPropertySelected: false,
+    secondPropertySelected: false
+  };
+
+  handleFirstProperty = () => {
+    this.setState({ firstPropertySelected: !firstPropertySelected });
+  };
+
+  handleSecondProperty = () => {
+    this.setState({ secondPropertySelected: !secondPropertySelected });
+  };
+
   render() {
     let {
       types,
@@ -19,14 +31,35 @@ class Sreach extends Component {
       onChangeDeposit,
       onChangeTour,
       getPlacesCount,
-      disableTour
+      disableTour,
+      firstPropertySelected,
+      secondPropertySelected
     } = this.props;
-
     const fileUploadLabelStyle = {
       cursor: 'pointer',
       display: 'inline-block',
       padding: '10px 15px',
       border: '2px solid #ddd',
+      borderRadius: '5px', // Making it square
+      color: '#555',
+      transition: 'background-color 0.3s ease',
+      ':hover': {
+        backgroundColor: '#f0f0f0'
+      },
+      'i': {
+        marginRight: '5px'
+      },
+      width: '95%', // Set width to match height
+      height: '100px', // Set height
+      textAlign: 'center',
+      lineHeight: '100px' // Center content vertically
+    };
+
+    const fileUploadSelectedLabelStyle = {
+      cursor: 'pointer',
+      display: 'inline-block',
+      padding: '10px 15px',
+      border: '2px solid green',
       borderRadius: '5px', // Making it square
       color: '#555',
       transition: 'background-color 0.3s ease',
@@ -66,9 +99,9 @@ class Sreach extends Component {
 
 <div style={{ marginBottom: '20px' }}> {/* Applying inline style */}
           <h6>Select Southwest property</h6>
-          <label htmlFor="file-upload" style={fileUploadLabelStyle}>
+          <label htmlFor="file-upload" style={firstPropertySelected ? fileUploadSelectedLabelStyle : fileUploadLabelStyle}>
             <i className="fas fa-cloud-upload-alt"></i>
-            Choose a file2
+            First Property
           </label>
           
           {/* <input id="file-upload" type="file" style={fileUploadInputStyle} /> */}
@@ -76,9 +109,9 @@ class Sreach extends Component {
 
         <div style={{ marginBottom: '20px' }}> {/* Applying inline style */}
           <h6>Select any other propety</h6>
-          <label htmlFor="file-upload" style={fileUploadLabelStyle}>
+          <label htmlFor="file-upload" style={secondPropertySelected ? fileUploadSelectedLabelStyle : fileUploadLabelStyle}>
             <i className="fas fa-cloud-upload-alt"></i>
-            Choose a file2
+            Second Property
           </label>
         
           {/* <input id="file-upload" type="file" style={fileUploadInputStyle} /> */}

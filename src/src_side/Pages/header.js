@@ -45,7 +45,7 @@ const Header = () => {
         <Item exact activeClassName="active" to="/home">
           Home
         </Item>
-        <Item activeClassName="active" to="/team">
+        <Item activeClassName="active" to="/competitors">
           Competitors
         </Item>
         <Item activeClassName="active" to="/calendar">
