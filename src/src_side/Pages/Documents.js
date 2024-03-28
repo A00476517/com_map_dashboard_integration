@@ -137,7 +137,7 @@ const Documents = () => {
 const Header = () => {
   return (
     <div style={styles.header}>
-      <h1 style={{ margin: 0, fontSize: '15px',  textAlign: 'center' }}>All listings</h1>
+      <h1 style={{ margin: 0, fontSize: '15px',  textAlign: 'center' }}>HRM</h1>
     </div>
   );
 };

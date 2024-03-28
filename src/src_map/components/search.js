@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InputRange from "react-input-range";
-
+import photo1 from "../icon-apartment.png"
 class Sreach extends Component {
   state = {
     firstPropertySelected: false,
@@ -20,12 +20,14 @@ class Sreach extends Component {
       types,
       rooms,
       areas,
+      dataFilter,
       rents,
       deposits,
       slideOpen,
       onChangeSlide,
       onChangeType,
       onChangeRoom,
+      onChangeDataFilter,
       onChangeArea,
       onChangeRent,
       onChangeDeposit,
@@ -97,24 +99,28 @@ class Sreach extends Component {
           <form className="sc-form">
           
 
-<div style={{ marginBottom: '20px' }}> {/* Applying inline style */}
+          <div style={{ marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {/* Applying inline style */}
           <h6>Select Southwest property</h6>
           <label htmlFor="file-upload" style={firstPropertySelected ? fileUploadSelectedLabelStyle : fileUploadLabelStyle}>
-            <i className="fas fa-cloud-upload-alt"></i>
-            First Property
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <i className="fas fa-cloud-upload-alt" style={{ marginBottom: '5px' }}></i>
+              <img src={photo1} alt="client" />                           
+              First Property
+            </div>
           </label>
-          
-          {/* <input id="file-upload" type="file" style={fileUploadInputStyle} /> */}
         </div>
 
-        <div style={{ marginBottom: '20px' }}> {/* Applying inline style */}
-          <h6>Select any other propety</h6>
+        <div style={{ marginBottom: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {/* Applying inline style */}
+          <h6>Select any other property</h6>
           <label htmlFor="file-upload" style={secondPropertySelected ? fileUploadSelectedLabelStyle : fileUploadLabelStyle}>
-            <i className="fas fa-cloud-upload-alt"></i>
-            Second Property
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <i className="fas fa-cloud-upload-alt" style={{ marginBottom: '5px' }}></i>
+              <img src={photo1} alt="client" />                           
+              Second Property
+            </div>
           </label>
-        
-          {/* <input id="file-upload" type="file" style={fileUploadInputStyle} /> */}
         </div>
 
         <header className="sc-slide-header">
@@ -122,6 +128,33 @@ class Sreach extends Component {
 
          
         </header>
+
+        <h6>Data filter</h6>
+
+        <div className="sc-form-group sc-grid-2">
+          { dataFilter.map((dataFilter, index) => {
+            return (
+              <div className="sc-form-radio" key={index}>
+                <input
+                  type="radio"
+                  name="dataFilter"
+                  id={dataFilter.slug}
+                  data-datafilter={dataFilter.slug}
+                  checked={dataFilter.checked}
+                  onChange={event => {
+                    onChangeDataFilter(event);
+                  }}
+                />
+
+                <label htmlFor={dataFilter.slug}>
+                  <i className="sc-icon-radio"></i>
+
+                  <span>{dataFilter.name}</span>
+                </label>
+              </div>
+            );
+          })}
+        </div>
 
             <h6>Type</h6>
 

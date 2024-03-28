@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import PropetyDetailPage from "./PropetyDetailPage";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { useParams } from 'react-router-dom';
-
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 const PropertyData = [
   {
     "property_management_name": "FACADE investments - NAhas",
@@ -106,7 +107,32 @@ const PropertyList = () => {
   return (
     <div>
       <Header />
-      <PropertyListView />
+      <AllProList />
+    </div>
+  );
+};
+
+
+const AllProList = () => {
+
+  return (
+    <div style={styles.container}>
+      <div style={styles.cardsContainer}>
+      <Tabs>
+    <TabList>
+      <Tab>Listings</Tab>
+      <Tab>Comparision</Tab>
+    </TabList>
+
+    <TabPanel>
+      <PropertyListView/>
+    </TabPanel>
+    <TabPanel>
+      <PropertyListView/>
+    </TabPanel>
+
+  </Tabs>
+      </div>
     </div>
   );
 };
