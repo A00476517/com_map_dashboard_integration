@@ -39,142 +39,7 @@ class App extends Component {
     },
     places: {
       "type": "FeatureCollection",
-      "features": [{
-              "type": "Feature",
-              "properties": {
-                  "id": "item-0",
-                  "title": "Southwest-Praesent ut ipsum nulla.",
-                  "excerpt": "Orci varius natoque penatibus et magnis dis parturient montes.",
-                  "description": "Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Turpis in eu mi bibendum neque egestas. Nibh praesent tristique magna sit amet purus. Id aliquet risus feugiat in ante metus. Curabitur gravida arcu ac tortor. Vivamus arcu felis bibendum ut tristique et egestas. Nunc non blandit massa enim nec dui nunc mattis. Eu non diam phasellus vestibulum lorem. Risus commodo viverra maecenas accumsan lacus vel.",
-                  "images": [{
-                          "original": "/assets/images/original/apartment/2/1.jpg",
-                          "thumbnail": "/assets/images/thumbnail/apartment/2/1.jpg"
-                      },
-                      {
-                          "original": "/assets/images/original/apartment/2/2.jpg",
-                          "thumbnail": "/assets/images/thumbnail/apartment/2/2.jpg"
-                      },
-                      {
-                          "original": "/assets/images/original/apartment/2/3.jpg",
-                          "thumbnail": "/assets/images/thumbnail/apartment/2/3.jpg"
-                      }
-                  ],
-                  "type": "apartment",
-                  "rooms": 1,
-                  "area": 97,
-                  "rent": 20900,
-                  "deposit": 83000
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -63.571602,
-                      44.636379
-                  ]
-              }
-          },
-          {
-              "type": "Feature",
-              "properties": {
-                  "id": "item-1",
-                  "title": "Southwest-Praesent ut ipsum nulla.",
-                  "excerpt": "Praesent ullamcorper dui molestie augue hendrerit finibus. Praesent ut ipsum nulla.",
-                  "description": "Erat velit scelerisque in dictum non consectetur a erat nam. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Pretium aenean pharetra magna ac placerat vestibulum lectus. Augue mauris augue neque gravida in fermentum et. Eros in cursus turpis massa tincidunt. Leo in vitae turpis massa sed elementum tempus egestas. Blandit aliquam etiam erat velit scelerisque in dictum non consectetur.",
-                  "images": [{
-                          "original": "/assets/images/original/apartment/3/1.jpg",
-                          "thumbnail": "/assets/images/thumbnail/apartment/3/1.jpg"
-                      },
-                      {
-                          "original": "/assets/images/original/apartment/3/2.jpg",
-                          "thumbnail": "/assets/images/thumbnail/apartment/3/2.jpg"
-                      },
-                      {
-                          "original": "/assets/images/original/apartment/3/3.jpg",
-                          "thumbnail": "/assets/images/thumbnail/apartment/3/3.jpg"
-                      }
-                  ],
-                  "type": "apartment",
-                  "rooms": 1,
-                  "area": 52,
-                  "rent": 10900,
-                  "deposit": 32000
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -63.571461,
-                      44.628948
-                  ]
-              }
-          },
-          {
-              "type": "Feature",
-              "properties": {
-                  "id": "item-2",
-                  "title": "Southwest-Orci varius natoque penatibus",
-                  "excerpt": "Orci varius natoque penatibus et magnis dis parturient montes.",
-                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus in ornare quam viverra orci sagittis eu volutpat. Diam ut venenatis tellus in metus vulputate eu. Quam quisque id diam vel quam elementum pulvinar etiam. Imperdiet massa tincidunt nunc pulvinar. Velit aliquet sagittis id consectetur purus ut. Libero enim sed faucibus turpis in eu mi bibendum. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc.",
-                  "images": [{
-                          "original": "/assets/images/original/shared/3/1.jpg",
-                          "thumbnail": "/assets/images/thumbnail/shared/3/1.jpg"
-                      },
-                      {
-                          "original": "/assets/images/original/shared/3/2.jpg",
-                          "thumbnail": "/assets/images/thumbnail/shared/3/2.jpg"
-                      },
-                      {
-                          "original": "/assets/images/original/shared/3/3.jpg",
-                          "thumbnail": "/assets/images/thumbnail/shared/3/3.jpg"
-                      }
-                  ],
-                  "type": "shared",
-                  "rooms": 2,
-                  "area": 99,
-                  "rent": 21800,
-                  "deposit": 65000
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -63.57958666863994,
-                      44.64103165
-                  ]
-              }
-          },
-          {
-            "type": "Feature",
-            "properties": {
-                "id": "item-2",
-                "title": "Southwest-Orci varius natoque penatibus",
-                "excerpt": "Orci varius natoque penatibus et magnis dis parturient montes.",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus in ornare quam viverra orci sagittis eu volutpat. Diam ut venenatis tellus in metus vulputate eu. Quam quisque id diam vel quam elementum pulvinar etiam. Imperdiet massa tincidunt nunc pulvinar. Velit aliquet sagittis id consectetur purus ut. Libero enim sed faucibus turpis in eu mi bibendum. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc.",
-                "images": [{
-                        "original": "/assets/images/original/shared/3/1.jpg",
-                        "thumbnail": "/assets/images/thumbnail/shared/3/1.jpg"
-                    },
-                    {
-                        "original": "/assets/images/original/shared/3/2.jpg",
-                        "thumbnail": "/assets/images/thumbnail/shared/3/2.jpg"
-                    },
-                    {
-                        "original": "/assets/images/original/shared/3/3.jpg",
-                        "thumbnail": "/assets/images/thumbnail/shared/3/3.jpg"
-                    }
-                ],
-                "type": "shared",
-                "rooms": 2,
-                "area": 99,
-                "rent": 21800,
-                "deposit": 65000
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                  -63.58014346185526	,
-                    44.63114815
-                ]
-            }
-        }
+      "features": [
       ]
   }
   ,
@@ -189,8 +54,93 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.InitializeMap();
+    this.fetchData()
   }
+
+  fetchData = () => {
+    fetch('http://54.196.154.157:8070/map/comp-listings?records_limit=20')
+    .then(response => response.json())
+    .then(data => {
+     
+      const geoJsonData = {
+        "type": "FeatureCollection",
+        "features": data.map((item, index) => ({
+          "type": "Feature",
+          "properties": {
+            "id": `item-${index}`,
+            "title": item.property_management_name,
+            "excerpt": item.address,
+            "description": item.description,
+            "images": [{
+                "original": item.property_image,
+                "thumbnail": item.property_image // Assuming the same image for both
+            }],
+            // Add or adjust properties as necessary
+            "type": item.property_type || "apartment",
+            "rooms": item.bedroom_count,
+            "area": parseInt(item.apartment_size, 10),
+            "rent": parseInt(item.monthly_rent, 10),
+            "deposit": 0, // Adjust as needed
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              parseFloat(item.add_long),
+              parseFloat(item.add_lat)
+            ]
+          }
+        }))
+      };
+
+      this.setState({places: geoJsonData })
+      this.InitializeMap(geoJsonData);
+      // setPropertyData2(data)
+    })
+    .catch(error => console.error('Error fetching data:', error));
+  }
+
+  fetchDataFilter = (url, slug) => {
+    fetch('http://54.196.154.157:8070/map/comp-listings?records_limit=20')
+    .then(response => response.json())
+    .then(data => {
+     
+      const geoJsonData = {
+        "type": "FeatureCollection",
+        "features": data.map((item, index) => ({
+          "type": "Feature",
+          "properties": {
+            "id": `item-${index}`,
+            "title": item.property_management_name,
+            "excerpt": item.address,
+            "description": item.description,
+            "images": [{
+                "original": item.property_image,
+                "thumbnail": item.property_image // Assuming the same image for both
+            }],
+            // Add or adjust properties as necessary
+            "type": item.property_type || "apartment",
+            "rooms": item.bedroom_count,
+            "area": parseInt(item.apartment_size, 10),
+            "rent": parseInt(item.monthly_rent, 10),
+            "deposit": 0, // Adjust as needed
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              parseFloat(item.add_long),
+              parseFloat(item.add_lat)
+            ]
+          }
+        }))
+      };
+
+      this.setState({places: geoJsonData })
+      this.InitializeMap(geoJsonData);
+      // setPropertyData2(data)
+    })
+    .catch(error => console.error('Error fetching data:', error));
+  }
+
 
   render() {
     let numberOFPlaces = this.state.places.features.length;
@@ -930,39 +880,187 @@ class App extends Component {
     let slug = event.target.getAttribute("data-datafilter");
     let dataFilter = [...this.state.dataFilter].map(dataFilter => {
       dataFilter.checked = dataFilter.slug === slug ? true : false;
-
       return dataFilter;
     });
 
     if(slug == "public"){
-      this.setState({ places: publicData });
+    fetch('http://54.196.154.157:8070/map/public-listings?records_limit=20')
+    .then(response => response.json())
+    .then(data => {
+      const geoJsonData = {
+        "type": "FeatureCollection",
+        "features": data.map((item, index) => ({
+          "type": "Feature",
+          "properties": {
+            "id": `item-${index}`,
+            "title": item.property_management_name,
+            "excerpt": item.address,
+            "description": item.description,
+            "images": [{
+                "original": item.property_image,
+                "thumbnail": item.property_image // Assuming the same image for both
+            }],
+            // Add or adjust properties as necessary
+            "type": item.property_type || "apartment",
+            "rooms": item.bedroom_count,
+            "area": parseInt(item.apartment_size, 10),
+            "rent": parseInt(item.monthly_rent, 10),
+            "deposit": 0, // Adjust as needed
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              parseFloat(item.add_long),
+              parseFloat(item.add_lat)
+            ]
+          }
+        }))
+      };
+
+      this.setState({places: geoJsonData })
       this.mapcraft.map.getSource('places-data').setData(publicData);
       if (publicData.features.length)
       this.mapcraft.fitBounds({
         geoJson: publicData
       });
 
+      this.InitializeMap(geoJsonData);
+      this.setState({dataFilter})
+      console.log("slugggggggggggggggg"+slug)
+      // this.InitializeMap(this.state.places)
+      this.handleChangeTour("end-tour");
+
+      // setPropertyData2(data)
+    })
+    .catch(error => console.error('Error fetching data:', error));
+
+      // this.setState({ places: publicData });
+      // this.mapcraft.map.getSource('places-data').setData(publicData);
+      // if (publicData.features.length)
+      // this.mapcraft.fitBounds({
+      //   geoJson: publicData
+      // });
+
     }else if(slug == "southwest"){
-      this.setState({ places: southWestData });
-      this.mapcraft.map.getSource('places-data').setData(southWestData);
+      // this.setState({ places: southWestData });
+      // this.mapcraft.map.getSource('places-data').setData(southWestData);
 
-      if (southWestData.features.length)
-      this.mapcraft.fitBounds({
-        geoJson: southWestData
-      });
+      // if (southWestData.features.length)
+      // this.mapcraft.fitBounds({
+      //   geoJson: southWestData
+      // });
+
+      fetch('http://54.196.154.157:8070/map/southwest-listings?records_limit=20')
+      .then(response => response.json())
+      .then(data => {
+        const geoJsonData = {
+          "type": "FeatureCollection",
+          "features": data.map((item, index) => ({
+            "type": "Feature",
+            "properties": {
+              "id": `item-${index}`,
+              "title": item.property_management_name,
+              "excerpt": item.address,
+              "description": item.description,
+              "images": [{
+                  "original": item.property_image,
+                  "thumbnail": item.property_image // Assuming the same image for both
+              }],
+              // Add or adjust properties as necessary
+              "type": item.property_type || "apartment",
+              "rooms": item.bedroom_count,
+              "area": parseInt(item.apartment_size, 10),
+              "rent": parseInt(item.monthly_rent, 10),
+              "deposit": 0, // Adjust as needed
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                parseFloat(item.add_long),
+                parseFloat(item.add_lat)
+              ]
+            }
+          }))
+        };
+  
+        this.setState({places: geoJsonData })
+        this.mapcraft.map.getSource('places-data').setData(publicData);
+        if (publicData.features.length)
+        this.mapcraft.fitBounds({
+          geoJson: publicData
+        });
+  
+        this.InitializeMap(geoJsonData);
+        this.setState({dataFilter})
+        console.log("slugggggggggggggggg"+slug)
+        // this.InitializeMap(this.state.places)
+        this.handleChangeTour("end-tour");
+  
+        // setPropertyData2(data)
+      })
+      .catch(error => console.error('Error fetching data:', error));
+
+      
     }else{
-      this.setState({ places: compeData });
-      this.mapcraft.map.getSource('places-data').setData(compeData);
+      // this.setState({ places: compeData });
+      // this.mapcraft.map.getSource('places-data').setData(compeData);
 
-      if (compeData.features.length)
-      this.mapcraft.fitBounds({
-        geoJson: compeData
-      });
+      // if (compeData.features.length)
+      // this.mapcraft.fitBounds({
+      //   geoJson: compeData
+      // });
+
+      fetch('http://54.196.154.157:8070/map/comp-listings?records_limit=20')
+      .then(response => response.json())
+      .then(data => {
+        const geoJsonData = {
+          "type": "FeatureCollection",
+          "features": data.map((item, index) => ({
+            "type": "Feature",
+            "properties": {
+              "id": `item-${index}`,
+              "title": item.property_management_name,
+              "excerpt": item.address,
+              "description": item.description,
+              "images": [{
+                  "original": item.property_image,
+                  "thumbnail": item.property_image // Assuming the same image for both
+              }],
+              // Add or adjust properties as necessary
+              "type": item.property_type || "apartment",
+              "rooms": item.bedroom_count,
+              "area": parseInt(item.apartment_size, 10),
+              "rent": parseInt(item.monthly_rent, 10),
+              "deposit": 0, // Adjust as needed
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                parseFloat(item.add_long),
+                parseFloat(item.add_lat)
+              ]
+            }
+          }))
+        };
+  
+        this.setState({places: geoJsonData })
+        this.mapcraft.map.getSource('places-data').setData(publicData);
+        if (publicData.features.length)
+        this.mapcraft.fitBounds({
+          geoJson: publicData
+        });
+  
+        this.InitializeMap(geoJsonData);
+        this.setState({dataFilter})
+        // this.InitializeMap(this.state.places)
+        this.handleChangeTour("end-tour");
+  
+        // setPropertyData2(data)
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  
     }
-    this.setState({dataFilter})
-    console.log("slugggggggggggggggg"+slug)
-    this.InitializeMap()
-    this.handleChangeTour("end-tour");
+   
    
     // this.handleFilter();
     // this.handleGeoJson();
@@ -1056,7 +1154,7 @@ class App extends Component {
     this.setState({ tourActive, tourIndex });
   };
 
-  InitializeMap = () => {
+  InitializeMap = (placevar) => {
     this.mapcraft = new Mapcraft({
       env: {
         mapbox: {
@@ -1101,7 +1199,7 @@ class App extends Component {
       // Add your source and layer using the added image here
       this.mapcraft.map.addSource('places-data', {
         type: 'geojson',
-        data: this.state.places,
+        data: placevar,
       });
       
       this.mapcraft.map.addLayer({
@@ -1170,14 +1268,10 @@ class App extends Component {
 
     let html = `<div class="sc-card sc-borderless">
       <div class="sc-card-header">
-        <h5 class="app-page-trigger">Compare with ${title} / ( graph )</h5>
+        <h5 class="app-page-trigger"> ${title} </h5>
       </div>
       <h5 class="app-page-trigger">${title}</h5> 
-      <button class="first-property-button" style="${this.state.secondPropertySelected ? 'background-color: red;' : 'background-color: #4caf50;'} border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 8px;">Select First Property</button>
- 
-      <button class="second-property-button" style="background-color: #4caf50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 8px;">Select Second Property</button>
-
-
+  
       <div class="sc-card-body">
         <div>
           <img src="${images[0].thumbnail}" class="app-page-trigger" />
@@ -1230,13 +1324,13 @@ class App extends Component {
       });
     });
 
-    document.querySelector('.first-property-button').addEventListener('click', () => {
-      this.handleFirstProperty2();
-    });
+  //   document.querySelector('.first-property-button').addEventListener('click', () => {
+  //     this.handleFirstProperty2();
+  //   });
 
-    document.querySelector('.second-property-button').addEventListener('click', () => {
-      this.handleSecondProperty2();
-  });
+  //   document.querySelector('.second-property-button').addEventListener('click', () => {
+  //     this.handleSecondProperty2();
+  // });
   };
 }
 
